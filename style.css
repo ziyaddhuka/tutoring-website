@@ -1,0 +1,31 @@
+.bg-org{
+    background-color: orange;
+    color: white;
+    
+}
+/* ul{
+    color: white;
+} */
+
+.navbar-brand{
+    font-size: x-large;
+    width: auto;
+    /* position: absolute; */
+}
+
+.navbar-brand img{
+    height: 80px;
+    width: 100%;
+}
+
+.navbar{
+    height: 80px;
+    font-size: large;
+}
+
+
+/* .logo{
+    display: block;
+    height: 40px;
+    width: 40px;
+} */
