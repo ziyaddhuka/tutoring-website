@@ -1,17 +1,19 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tutoring Website</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="./style.css"/>
-  <!-- Font-Awesome pack-->
-  <script src="https://kit.fontawesome.com/788d8b191e.js" crossorigin="anonymous"></script>
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
-</head>
-<body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tutoring Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="./style.css"/>
+    <!-- Font-Awesome pack-->
+    <script src="https://kit.fontawesome.com/788d8b191e.js" crossorigin="anonymous"></script>
+      <!-- JavaScript Bundle with Popper -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  </head>
+  <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-org">
         <a class="navbar-brand" href="#"><img src="images/classroom.png" class="rounded mx-auto d-block"/></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,6 +50,164 @@
               </li>
           </ul>
         </div>
-      </nav>
-</body>
+    </nav>
+    <div class="bg-image">
+      <div class="jumbotron jumbotron-fluid" id = "intro-jumbotron">
+        <div class="jumbotron-container"></div>
+        <h1 class="display-4">Welcome to Tutorly!</h1>
+        <p class="lead">Learn English from the best tutors around the world.</p>
+      </div>
+    </div>
+    <div class="container button-container">
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" role="button" id="dropdownMenu1"  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="caret">Lesson Level</span>
+        </button>
+        <ul class="dropdown-menu checkbox-menu allow-focus" aria-labelledby="dropdownMenu1">
+          <li><label><input type="checkbox"> Beginner </label></li>
+          <li><label><input type="checkbox"> Intermediate </label></li>
+          <li><label><input type="checkbox"> Advanced </label></li>
+        </ul>
+        <button class="btn btn-default dropdown-toggle" role="button" id="dropdownMenu2"  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="caret">Tutor Accent</span>
+        </button>
+        <ul class="dropdown-menu checkbox-menu allow-focus" aria-labelledby="dropdownMenu2">
+          <li><label><input type="checkbox"> North American Accent </label></li>
+          <li><label><input type="checkbox"> British Accent </label></li>
+          <li><label><input type="checkbox"> Australian Accent </label></li>
+          <li><label><input type="checkbox"> Other Accent </label></li>
+        </ul>
+        <button class="btn btn-default dropdown-toggle" role="button" id="dropdownMenu3"  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="caret">Tutor Personality</span>
+        </button>
+        <ul class="dropdown-menu checkbox-menu allow-focus" aria-labelledby="dropdownMenu3">
+          <li><label><input type="checkbox"> Kind and Patient </label></li>
+          <li><label><input type="checkbox"> Fun and Gregarious </label></li>
+          <li><label><input type="checkbox"> Scholarly and Knowledgeable </label></li>
+        </ul>
+    </div>
+    </div>
+    <div class="container cards-container">
+      <div class="row row-cols-1 row-cols-md-4 g-2">
+        <div class="card">
+          <img src="./images/tutors/EleanorBash.jpg" class="card-img-top" alt="Eleanor Bash pic">
+          <div class="card-body">
+            <h5 class="card-title">Eleanor Bash</h5>
+            <p class="card-text">Hi, my name is Eleanor! I have been living in Vietnam for a few years and also teaching English as well. I have many hobbies and interests so w..</p>
+            <div class="oneline-card-button">
+              <button class = "btn btn-default" id = "about-me-button">About Me</button>
+              <button class = "btn btn-success" id = "call-me-button">Schedule Meet</button>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./images/tutors/DavidPotter.jpg" class="card-img-top" alt="David Potter pic">
+          <div class="card-body">
+            <h5 class="card-title">David Potter</h5>
+            <p class="card-text">I have been around the world so can pass on my experience of English speaking and make lessons enjoyable. Learning English should be fun</p>
+            <div class="oneline-card-button">
+              <button class = "btn btn-default" id = "about-me-button">About Me</button>
+              <button class = "btn btn-success" id = "call-me-button">Schedule Meet</button>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./images/tutors/MacyStewart.jpg" class="card-img-top" alt="Macy Stewart">
+          <div class="card-body">
+            <h5 class="card-title">Macy Stewart</h5>
+            <p class="card-text">If you are willing to learn, I am more than happy to be a part of your journey to learn English! :) I can help you with your spoken English...</p>
+            <div class="oneline-card-button">
+              <button class = "btn btn-default" id = "about-me-button">About Me</button>
+              <button class = "btn btn-success" id = "call-me-button">Schedule Meet</button>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./images/tutors/JoshCambri.jpg" class="card-img-top" alt="Josh Cambri">
+          <div class="card-body">
+            <h5 class="card-title">Josh Cambri</h5>
+            <p class="card-text">I am here to assist you to practice your business English or to have a nice general casual conversation.</p>
+            <div class="oneline-card-button">
+              <button class = "btn btn-default" id = "about-me-button">About Me</button>
+              <button class = "btn btn-success" id = "call-me-button">Schedule Meet</button>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./images/tutors/MarkHenry.jpg" class="card-img-top" alt="Mark Henry">
+          <div class="card-body">
+            <h5 class="card-title">Mark Henry</h5>
+            <p class="card-text">TI am a patient teacher because I understand how difficult it can be to learn a second language. I adapt my classes to suit the students.</p>
+            <div class="oneline-card-button">
+              <button class = "btn btn-default" id = "about-me-button">About Me</button>
+              <button class = "btn btn-success" id = "call-me-button">Schedule Meet</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <!--source: https://getbootstrap.com/docs/4.0/utilities/colors/-->
+      <!--source: https://www.cambly.com/english?lang=en-->
+      <!--source: https://mdbootstrap.com/docs/standard/navigation/footer/-->
+      <!--source: https://getbootstrap.com/docs/4.0/utilities/spacing/-->
+    <footer>
+      <div class="row bg-light">
+        <div class="col-sm-4 mt-4 text-center">
+          <h6>ABOUT</h6>
+          <p><a href="#" class="text-secondary">Courses</a></p>
+          <p><a href="#" class="text-secondary">Tutors</a></p>
+          <p><a href="#" class="text-secondary">Pricing</a></p>
+          <p><a href="#" class="text-secondary">Blogs</a></p>
+          <p><a href="#" class="text-secondary">Careers</a></p>
+        </div>
+        <div class="col-sm-4 mt-4 text-center">
+          <h6>JOIN</h6>
+          <p><a href="#" class="text-secondary">As a Student</a></p>
+          <p><a href="#" class="text-secondary">As a Tutor</a></p>
+          <p><a href="#" class="text-secondary">As an Organization</a></p>
+        </div>
+        <div class="col-sm-4 mt-4 text-center">
+          <h6>USEFUL LINKS</h6>
+          <p><a href="#" class="text-secondary">Help Center</a></p>
+          <p><a href="#" class="text-secondary">FAQs</a></p>
+          <p><a href="#" class="text-secondary">Contact Us</a></p>
+          <p><a href="#" class="text-secondary">Download the App</a></p>
+        </div>
+      </div>
+      <!--source: https://icons.getbootstrap.com-->
+      <!--bg-warning = yellow background-->
+      <div class="row yellow-warning-bg">
+        <div class="col-sm-4 mt-2 text-center">
+          <a href="#" class="text-light mx-2">Privacy Policy</a>
+          <a href="#" class="text-light mx-2">Terms and Conditions</a>
+          <a href="#" class="text-light mx-2">Jobs</a>
+        </div>
+        <div class="col-sm-4 mt-2 text-center">
+          <a href="#"><i class="bi bi-facebook text-light mx-1"></i></a>
+          <a href="#"><i class="bi bi-twitter text-light mx-1"></i></a>
+          <a href="#"><i class="bi bi-instagram text-light mx-1"></i></a>
+          <a href="#"><i class="bi bi-youtube text-light mx-1"></i></a>
+        </div>
+        <div class="col-sm-4 mt-2 text-center">
+          <p class="text-light">Name Inc. © Copyright 2021. All rights reserved.<p>
+        </div>
+      </div>
+    </footer>
+
+
+
+
+
+    <!-- Script for dropdown checkbox -->
+    <script>
+      $(document).on('click', '.allow-focus', function (e) {
+          e.stopPropagation();
+      });
+
+      $(".checkbox-menu").on("change", "input[type='checkbox']", function() {
+          $(this).closest("li").toggleClass("active", this.checked);
+      });
+    
+    </script>
+  </body>
 </html>
