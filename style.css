@@ -1,6 +1,6 @@
 .bg-org{
-    background-color: orange;
-    color: white;
+    background-color:#ffc107;
+    color: rgb(248, 169, 169);
     
 }
 /* ul{
@@ -21,11 +21,99 @@
 .navbar{
     height: 80px;
     font-size: large;
+    padding-top:0;
+}
+
+.bg-image{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(233,232,148,0.6674019949776786) 100%);
+    height: 35vh;
+    width: 100%;
+    color: rgb(7, 0, 83);
+}
+
+.button-container{
+    align-items: left;
+    /* padding-left: 20px; */
+    margin-top: 20px;
 }
 
 
-/* .logo{
+/* Source https://stackoverflow.com/a/52517790 */
+.checkbox-menu li label {
     display: block;
-    height: 40px;
-    width: 40px;
-} */
+    padding: 3px 10px;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+    margin:0;
+    transition: background-color .4s ease;
+}
+.checkbox-menu li input {
+    margin: 0px 5px;
+    top: 2px;
+    position: relative;
+}
+
+.checkbox-menu li.active label {
+    background-color: #cbcbff;
+    font-weight:bold;
+}
+
+.checkbox-menu li label:hover,
+.checkbox-menu li label:focus {
+    background-color: #f5f5f5;
+}
+
+.checkbox-menu li.active label:hover,
+.checkbox-menu li.active label:focus {
+    background-color: #b8b8ff;
+}
+
+.cards-container{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* .card-columns {
+    @include media-breakpoint-only(lg) {
+      column-count: 4;
+    }
+    @include media-breakpoint-only(xl) {
+      column-count: 5;
+    }
+  } */
+
+  .card-img-top {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+#about-me-button {
+    float: left;
+    font-size:12px;
+}
+
+#call-me-button{
+    float: right;
+    font-size:12px;
+}
+
+.card-text{
+    font-size:12px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+footer{
+    font-size: 14px;
+}
+
+.yellow-warning-bg{
+    background-color: #ffc107;
+}
