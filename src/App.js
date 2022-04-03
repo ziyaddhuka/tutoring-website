@@ -1,15 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
-import Footer from './Footer';
+import Footer from './components/Footer';
 import Header from './components/header';
-
+import CardsLayout from './components/CardsLayout';
+import JumbotronBanner from './components/JumbotronBanner';
+// import TutorsFilter from './components/TutorsFilter';
 function App() {
   return (
   <div>
-    <div><Header/> </div>
-    <Footer/>
+      <Header/> 
+      <JumbotronBanner/>
+      <CardsLayout/>
+      <Footer/>
   </div>
-    
   );
 }
 

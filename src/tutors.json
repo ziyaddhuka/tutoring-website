@@ -1,0 +1,27 @@
+[
+    {
+        "img_path":"/images/tutors/EleanorBash.jpg",
+        "name":"Eleanor Bash",
+        "description":"Hi, my name is Eleanor! I have been living in Vietnam for a few years and also teaching English as well. I have many hobbies and interests so w.."
+    },
+    {
+        "img_path":"/images/tutors/DavidPotter.jpg",
+        "name":"David Potter",
+        "description":"I have been around the world so can pass on my experience of English speaking and make lessons enjoyable. Learning English should be fun"
+    },
+    {
+        "img_path":"/images/tutors/MacyStewart.jpg",
+        "name":"Macy Stewart",
+        "description":"If you are willing to learn, I am more than happy to be a part of your journey to learn English! :) I can help you with your spoken English..."
+    },
+    {
+        "img_path":"/images/tutors/JoshCambri.jpg",
+        "name":"Josh Cambri",
+        "description":"I am here to assist you to practice your business English or to have a nice general casual conversation."
+    },
+    {
+        "img_path":"/images/tutors/MarkHenry.jpg",
+        "name":"Mark Henry",
+        "description":"TI am a patient teacher because I understand how difficult it can be to learn a second language. I adapt my classes to suit the students."
+    }
+]
