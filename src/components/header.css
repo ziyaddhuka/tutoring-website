@@ -16,6 +16,7 @@
 .navbar-brand img{
     height: 80px;
     width: 100%;
+    /* Delete if padding at logo is fine */
     padding-top: 0;
     padding-bottom: 0;
 }

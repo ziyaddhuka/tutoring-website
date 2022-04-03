@@ -1,0 +1,8 @@
+.row{
+    align-items: center;
+    vertical-align: middle;
+    display:flexbox;
+}
+.container-search{
+    padding-top: 1%;
+}
