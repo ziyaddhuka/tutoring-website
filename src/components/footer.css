@@ -1,0 +1,19 @@
+
+footer{
+    font-size: 14px;
+}
+
+.yellow-warning-bg{
+    background-color: #ac8f36cb;
+}
+
+.col-sm-4> p> a{
+    text-decoration: none;
+}
+.col-sm-4> a{
+    text-decoration: none;
+}
+
+footer > .row{
+    --bs-gutter-x: 0;
+}

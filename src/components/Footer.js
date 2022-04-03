@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './footer.css';
 const Footer = (props) =>{
     //source: https://getbootstrap.com/docs/4.0/utilities/colors/
     //source: https://www.cambly.com/english?lang=en
