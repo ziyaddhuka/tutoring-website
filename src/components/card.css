@@ -15,12 +15,19 @@
     margin-bottom: 20px;
 }
 
+.card-body{
+    display: flex;
+    flex-direction: column;
+}
+
+.oneline-card-button{
+    margin-top: auto;
+}
+
 #about-me-button {
     float: left;
-    font-size:12px;
 }
 
 #call-me-button{
     float: right;
-    font-size:12px;
 }
