@@ -8,7 +8,7 @@ function Home() {
   <div>
       <JumbotronBanner/>
       <TutorsFilter/>
-      <CardsLayout/>
+      {/* <CardsLayout/> */}
   </div>
   );
 }
