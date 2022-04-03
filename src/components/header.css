@@ -48,11 +48,6 @@
     padding-left: 0;
 }
 
-
-/* .input-group rounded{
-    padding-left: 50%;
-} */
-
 /* Uncomment the following line to debug css  */
 /* * {
     background: #000 !important;
@@ -61,4 +56,10 @@
   } */
 .nav-item dropdown{
     z-index: 1;
+}
+
+@media only screen and (max-width : 1000px) {
+    .navbar-collapse {
+    background: white;
+  }
 }
