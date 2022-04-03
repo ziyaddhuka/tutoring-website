@@ -1,9 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import './tutorsFilter.css';
 import Select from 'react-select';
 import Search from './Search';
+import CardsLayout from './CardsLayout';
+
 const options1 = [
   { value: 'beginner', label: 'Beginner' },
   { value: 'intermediate', label: 'Intermediate' },
@@ -24,11 +26,18 @@ const options3 = [
 
 
   class TutorsFilter extends Component {
+
     state = {
       selectedOption: null,
       selectedOption2: null,
-      selectedOption3: null
+      selectedOption3: null,
+      searchTerm: "",
     };
+
+    handleCallback = (childData) =>{
+      this.setState({searchTerm:childData})
+    }
+
     handleChange = selectedOption => {
       this.setState({ selectedOption });
       console.log(`Option selected:`, selectedOption);
@@ -46,7 +55,9 @@ const options3 = [
       const { selectedOption } = this.state;
       const { selectedOption2 } = this.state;
       const { selectedOption3 } = this.state;
+      const { searchTerm } = this.state;
       return (
+        <div>
         <div className="button-container" >
           <Select
             isMulti={true}
@@ -69,7 +80,11 @@ const options3 = [
             options={options3}
             placeholder="Select tutor Quality"
           />
-          <Search className="searchClass"/>
+          <Search className="searchClass" parentCallback = {this.handleCallback}/>
+        </div>
+        <div>
+          <CardsLayout dataFromParent = {searchTerm}/>
+        </div>
         </div>
       );
     }
