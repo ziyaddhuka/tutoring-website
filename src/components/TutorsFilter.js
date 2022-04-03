@@ -1,40 +1,79 @@
-// import React, { Component } from 'react';
-// import 'bootstrap/dist/css/bootstrap.css';
-// import 'bootstrap/dist/js/bootstrap.js';
-// import './tutorsFilter.css';
+import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.js';
+import './tutorsFilter.css';
+import Select from 'react-select';
+import Search from './Search';
+const options1 = [
+  { value: 'beginner', label: 'Beginner' },
+  { value: 'intermediate', label: 'Intermediate' },
+  { value: 'advanced', label: 'Advanced' }
+]
+const options2 = [
+    { value: 'North American Accent', label: 'North American Accent' },
+    { value: 'British Accent', label: 'British Accent' },
+    { value: 'Australian Accent', label: 'Australian Accent' },
+    { value: 'Other Accent', label: 'Other Accent' }
+  ]
 
-// function TutorsFilter(props) {
-//     return (
-//         // <div class="container button-container">
-//         //     <div class="dropdown">
-//         //         <button class="btn btn-default dropdown-toggle" role="button" id="dropdownMenu1"  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-//         //             <span class="caret">Lesson Level</span>
-//         //         </button>
-//         //         <ul class="dropdown-menu checkbox-menu allow-focus" aria-labelledby="dropdownMenu1">
-//         //             <li><label><input type="checkbox"> Beginner </input> </label></li>
-//         //             <li><label><input type="checkbox"> Intermediate </input></label></li>
-//         //             <li><label><input type="checkbox"> Advanced </input></label></li>
-//         //         </ul>
-//         //         <button class="btn btn-default dropdown-toggle" role="button" id="dropdownMenu2"  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-//         //             <span class="caret">Tutor Accent</span>
-//         //         </button>
-//         //         <ul class="dropdown-menu checkbox-menu allow-focus" aria-labelledby="dropdownMenu2">
-//         //             <li><label><input type="checkbox"> North American Accent </input></label></li>
-//         //             <li><label><input type="checkbox"> British Accent </input></label></li>
-//         //             <li><label><input type="checkbox"> Australian Accent </input></label></li>
-//         //             <li><label><input type="checkbox"> Other Accent </input></label></li>
-//         //         </ul>
-//         //         <button class="btn btn-default dropdown-toggle" role="button" id="dropdownMenu3"  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-//         //             <span class="caret">Tutor Personality</span>
-//         //         </button>
-//         //         <ul class="dropdown-menu checkbox-menu allow-focus" aria-labelledby="dropdownMenu3">
-//         //             <li><label><input type="checkbox"> Kind and Patient </input></label></li>
-//         //             <li><label><input type="checkbox"> Fun and Gregarious </input></label></li>
-//         //             <li><label><input type="checkbox"> Scholarly and Knowledgeable </input></label></li>
-//         //         </ul>
-//         //     </div>
-//         // </div>
-//     );
-// }
- 
-// export default TutorsFilter;
+const options3 = [
+    { value: 'Kind and Patient', label: 'Kind and Patient' },
+    { value: 'Fun and Gregarious', label: 'Fun and Gregarious' },
+    { value: 'Scholarly and Knowledgeable', label: 'Scholarly and Knowledgeable' }
+  ]
+
+
+  class TutorsFilter extends Component {
+    state = {
+      selectedOption: null,
+      selectedOption2: null,
+      selectedOption3: null
+    };
+    handleChange = selectedOption => {
+      this.setState({ selectedOption });
+      console.log(`Option selected:`, selectedOption);
+    };
+    handleChange2 = selectedOption2 => {
+      this.setState({ selectedOption2 });
+      console.log(`Option selected:`, selectedOption2);
+    };
+    handleChange3 = selectedOption3 => {
+      this.setState({ selectedOption3 });
+      console.log(`Option selected:`, selectedOption3);
+    };
+
+    render() {
+      const { selectedOption } = this.state;
+      const { selectedOption2 } = this.state;
+      const { selectedOption3 } = this.state;
+      return (
+        <div className="button-container" >
+          <Select
+            isMulti={true}
+            value={selectedOption}
+            onChange={this.handleChange}
+            options={options1}
+            placeholder="Select Course level"
+          />
+          <Select
+            isMulti={true}
+            value={selectedOption2}
+            onChange={this.handleChange2}
+            options={options2}
+            placeholder="Select Accent"
+          />
+          <Select
+            isMulti={true}
+            value={selectedOption3}
+            onChange={this.handleChange3}
+            options={options3}
+            placeholder="Select tutor Quality"
+          />
+          <Search className="searchClass"/>
+        </div>
+      );
+    }
+
+  }
+
+  export default TutorsFilter;
