@@ -9,43 +9,43 @@ const Footer = (props) =>{
     //bg-warning = yellow background
 	return (
       <footer>
-        <div class="row bg-light">
-          <div class="col-sm-4 mt-4 text-center">
+        <div className="row bg-light">
+          <div className="col-sm-4 mt-4 text-center">
             <h6>ABOUT</h6>
-            <p><a href="#" class="text-secondary">Courses</a></p>
-            <p><a href="#" class="text-secondary">Tutors</a></p>
-            <p><a href="#" class="text-secondary">Pricing</a></p>
-            <p><a href="#" class="text-secondary">Blogs</a></p>
-            <p><a href="#" class="text-secondary">Careers</a></p>
+            <p><a href="#" className="text-secondary">Courses</a></p>
+            <p><a href="#" className="text-secondary">Tutors</a></p>
+            <p><a href="#" className="text-secondary">Pricing</a></p>
+            <p><a href="#" className="text-secondary">Blogs</a></p>
+            <p><a href="#" className="text-secondary">Careers</a></p>
           </div>
-          <div class="col-sm-4 mt-4 text-center">
+          <div className="col-sm-4 mt-4 text-center">
             <h6>JOIN</h6>
-            <p><a href="#" class="text-secondary">As a Student</a></p>
-            <p><a href="#" class="text-secondary">As a Tutor</a></p>
-            <p><a href="#" class="text-secondary">As an Organization</a></p>
+            <p><a href="#" className="text-secondary">As a Student</a></p>
+            <p><a href="#" className="text-secondary">As a Tutor</a></p>
+            <p><a href="#" className="text-secondary">As an Organization</a></p>
           </div>
-          <div class="col-sm-4 mt-4 text-center">
+          <div className="col-sm-4 mt-4 text-center">
             <h6>USEFUL LINKS</h6>
-            <p><a href="#" class="text-secondary">Help Center</a></p>
-            <p><a href="#" class="text-secondary">FAQs</a></p>
-            <p><a href="#" class="text-secondary">Contact Us</a></p>
-            <p><a href="#" class="text-secondary">Download the App</a></p>
+            <p><a href="#" className="text-secondary">Help Center</a></p>
+            <p><a href="#" className="text-secondary">FAQs</a></p>
+            <p><a href="#" className="text-secondary">Contact Us</a></p>
+            <p><a href="#" className="text-secondary">Download the App</a></p>
           </div>
         </div>
-        <div class="row yellow-warning-bg">
-          <div class="col-sm-4 mt-2 text-center">
-            <a href="#" class="text-light mx-2">Privacy Policy</a>
-            <a href="#" class="text-light mx-2">Terms and Conditions</a>
-            <a href="#" class="text-light mx-2">Jobs</a>
+        <div className="row yellow-warning-bg">
+          <div className="col-sm-4 mt-2 text-center">
+            <a href="#" className="text-light mx-2">Privacy Policy</a>
+            <a href="#" className="text-light mx-2">Terms and Conditions</a>
+            <a href="#" className="text-light mx-2">Jobs</a>
           </div>
-          <div class="col-sm-4 mt-2 text-center">
-            <a href="#"><i class="bi bi-facebook text-light mx-1"></i></a>
-            <a href="#"><i class="bi bi-twitter text-light mx-1"></i></a>
-            <a href="#"><i class="bi bi-instagram text-light mx-1"></i></a>
-            <a href="#"><i class="bi bi-youtube text-light mx-1"></i></a>
+          <div className="col-sm-4 mt-2 text-center">
+            <a href="#"><i className="bi bi-facebook text-light mx-1"></i></a>
+            <a href="#"><i className="bi bi-twitter text-light mx-1"></i></a>
+            <a href="#"><i className="bi bi-instagram text-light mx-1"></i></a>
+            <a href="#"><i className="bi bi-youtube text-light mx-1"></i></a>
           </div>
-          <div class="col-sm-4 mt-2 text-center">
-            <p class="text-light">Best-Tutors Inc. © Copyright 2021. All rights reserved.</p>
+          <div className="col-sm-4 mt-2 text-center">
+            <p className="text-light">Best-Tutors Inc. © Copyright 2021. All rights reserved.</p>
           </div>
         </div>
       </footer>
