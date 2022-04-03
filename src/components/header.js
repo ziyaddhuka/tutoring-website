@@ -2,15 +2,13 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import './header.css';
-import logo from './../images/classroom.png';
-
 
 class Header extends Component {
     state = {  } 
     render() { 
         return (    
             <nav class="navbar navbar-expand-lg navbar-light bg-org">
-                <a class="navbar-brand" href="#"><img src={logo} class="rounded mx-auto d-block"/></a>
+                <a class="navbar-brand" href="#"><img src='/images/classroom.png' class="rounded mx-auto d-block"/></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
