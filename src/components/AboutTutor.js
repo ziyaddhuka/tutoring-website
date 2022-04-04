@@ -19,7 +19,7 @@ function AboutTutor(props){
                     </div>
                     <div className="col-sm-4">
                         <h2 className="text-center">About Me</h2>
-                        <p className="text-secondary">Hi, my name is Eleanor! I have been living in Vietnam for a few years and also teaching English as well. I have many hobbies and interests so w..</p>
+                        <p className="text-secondary">{state.description}</p>
                         <h2 className="text-center">Tutoring Style</h2>
                         <p className="text-secondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div>
