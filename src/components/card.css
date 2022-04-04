@@ -24,3 +24,62 @@
     float: right;
     font-size:12px;
 }
+
+/* 
+label {
+    Presentation
+    font-size: 20px
+  }
+
+  .col-sm{
+      width: auto;
+  }
+  
+  Required Styling - For Favorite icon - Not needed for now 
+  
+  label input[type="checkbox"] {
+    display: none;
+  }
+  
+  .custom-checkbox {
+    margin-left: 2em;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .custom-checkbox .bi {
+    color: gold;
+    position: absolute;
+    top: 0.4em;
+    left: -1.25em;
+    font-size: 0.75em;
+  }
+  
+  .custom-checkbox .bi bi-star {
+    color: gray;
+  }
+  
+  .custom-checkbox .bi bi-star-fill {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+  }
+  
+  .custom-checkbox:hover .bi bi-star-fill{
+    opacity: 0.5;
+  }
+  
+  .custom-checkbox input[type="checkbox"]:checked ~ .bi bi-star-fill {
+    opacity: 1;
+  } */
+
+  .bi{
+      float: right;
+      color: gold;
+  }
+
+  /* Uncomment the following line to debug css  */
+/* * {
+    background: #000 !important;
+    color: #0f0 !important;
+    outline: solid #f00 1px !important;
+  } */

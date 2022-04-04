@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import CardsLayout from './CardsLayout';
 import './search.css';
 
 class Search extends Component {

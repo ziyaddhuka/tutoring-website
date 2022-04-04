@@ -11,7 +11,24 @@ function Card(props) {
   <div className="card">
     <img src={props.img_src} className="card-img-top" alt={props.name}/>
     <div className="card-body">
-      <h5 className="card-title">{props.name}</h5>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-10">
+            <h5 className="card-title">{props.name}</h5>
+          </div>
+          <div class="col">
+          <i class="bi bi-star-fill"></i>
+            {/* <label for="id-of-input" class="custom-checkbox">
+              <input type="checkbox" id="id-of-input"/>
+              <i class="bi bi-star"></i>
+              <i class="bi bi-star-fill"></i>
+              <span>Favorite</span>
+            </label> */}
+          </div>
+        </div>
+      </div>
+
       <p className="card-text">{props.description}</p>
       <div className="oneline-card-button">
         <button className = "btn btn-default" id = "about-me-button" onClick={()=>{ navigate('/aboutTutor', {state: props});}}>About Me</button>
