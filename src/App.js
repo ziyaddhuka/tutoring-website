@@ -6,8 +6,12 @@ import JumbotronBanner from './components/JumbotronBanner';
 import TutorsFilter from './components/TutorsFilter';
 // import SearchAndFilter from './components/SearchAndFilters';
 import Home from './components/Home';
+import Login from './components/login';
+import Review from './components/review';
+import Appointments from './components/appointments';
 import ErrorPage from './components/ErrorPage';
 import AboutTutor from './components/AboutTutor';
+import Schedule from './components/schedule';
 import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -18,7 +22,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="/aboutTutor" element={<AboutTutor />}/>
-
+          <Route path="/writeReview" element={<Review />}/>
+          <Route path="/login" element={<Login />}/>
+          <Route path="/appointments" element={<Appointments />}/>
+          <Route path="/schedule" element={<Schedule />}/>
 
           <Route path="*" element={<ErrorPage />}/>
         </Routes>

@@ -1,11 +1,12 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 function AboutTutor(props){
         const { state } = useLocation();
+        let navigate = useNavigate();
         console.log(state);
     
         return(
@@ -14,33 +15,35 @@ function AboutTutor(props){
                     <div className="col-sm-4 text-center">
                         <img className="img-fluid rounded-circle" src={state.img_src}/>
                         <h1>{state.name}</h1>
-                        <button className = "btn btn-warning mt-2 mb-2">Add to Favorites</button>
-                        <button className = "btn btn-success mt-2 mb-2">Schedule Meet</button>
+                        <button className = "btn btn-warning my-2 mx-2" id="add-to-faves-button">Add to Favorites</button>
+                        <button className = "btn btn-success my-2 mx-2" id="sched-meet-button" onClick={()=>{ navigate('/schedule', {state: state});}}>Schedule Meet</button>
+                        <button className = "btn btn-secondary my-2 mx-2" id="write-review-button" onClick={()=>{ navigate('/writeReview', {state: state});}}>Write Review</button>
                     </div>
                     <div className="col-sm-4">
                         <h2 className="text-center">About Me</h2>
                         <p className="text-secondary">{state.description}</p>
-                        <h2 className="text-center">Tutoring Style</h2>
-                        <p className="text-secondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <h2 className="text-center">Reviews</h2>
+                        <h5>Great Tutor!<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></h5>
+                        <p>Such a great tutor! So nice and explains things well!</p>
+                        <hr></hr>
+                        <h5>Review 2<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></h5>
+                        <p>Review 2</p>
+                        <hr></hr>
+                        <h5>Review 3<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></h5>
+                        <p>Review 3</p>
                     </div>
                     <div className="col-sm-4">
-                        <h2 className ="text-center">Education</h2>
+                        <h2 className ="text-center">Languages Spoken</h2>
                         <ul className="text-secondary" type="circle">
-                            <li>University of Texas Dallas, Masters in Computer Science</li>
-                            <li>Education 2</li>
-                            <li>Education 3</li>
+                            {state.languagesSpoken.map((eachLang) => <li>{eachLang}</li>)}
                         </ul>
                         <h2 className="text-center">Schedule</h2>
                         <ul className="text-secondary" type="circle">
-                            <li>Monday: 11am - 2pm</li>
-                            <li>Tuesday, Wednesday, and Thursday: 1pm - 5pm</li>
-                            <li>Friday: 5pm - 8pm</li>
+                            {state.workingHours.map((eachHour) => <li>{eachHour}</li>)}
                         </ul>
                         <h2 className="text-center">Courses</h2>
                         <ul className="text-secondary" type="circle">
-                            <li>Computer Science</li>
-                            <li>Math</li>
-                            <li>English</li>
+                            {state.coursesTaught.map((eachCourse) => <li>{eachCourse}</li>)}
                         </ul>
                     </div>
                 </div>

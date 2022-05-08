@@ -39,10 +39,10 @@ const Footer = (props) =>{
             <a href="#" className="text-light mx-2">Jobs</a>
           </div>
           <div className="col-sm-4 mt-2 text-center">
-            <a href="#"><i className="bi bi-facebook text-light mx-1"></i></a>
-            <a href="#"><i className="bi bi-twitter text-light mx-1"></i></a>
-            <a href="#"><i className="bi bi-instagram text-light mx-1"></i></a>
-            <a href="#"><i className="bi bi-youtube text-light mx-1"></i></a>
+            <a href="#"><i className="bi-facebook text-light mx-1"></i></a>
+            <a href="#"><i className="bi-twitter text-light mx-1"></i></a>
+            <a href="#"><i className="bi-instagram text-light mx-1"></i></a>
+            <a href="#"><i className="bi-youtube text-light mx-1"></i></a>
           </div>
           <div className="col-sm-4 mt-2 text-center">
             <p className="text-light">Best-Tutors Inc. © Copyright 2021. All rights reserved.</p>
