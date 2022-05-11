@@ -8,7 +8,7 @@ class Search extends Component {
             <div>
             <div class="container-search">
               <div class="input-group mb-3">
-                <input type="text" class="form-control border-end-0 border rounded-pill" placeholder="Search..."
+                <input type="text" class="form-control border-end-0 border rounded-pill" placeholder="Search Tutor or Course"
                     onChange= {(event)=>{
                         this.props.parentCallback(event.target.value);
                         }

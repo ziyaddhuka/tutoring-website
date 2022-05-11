@@ -18,7 +18,7 @@ function Card(props) {
             <h5 className="card-title">{props.name}</h5>
           </div>
           <div class="col">
-          <i class="bi bi-star-fill"></i>
+          <a href="#"><i class="bi bi-star"></i></a>
             {/* <label for="id-of-input" class="custom-checkbox">
               <input type="checkbox" id="id-of-input"/>
               <i class="bi bi-star"></i>
@@ -31,8 +31,8 @@ function Card(props) {
 
       <p className="card-text">{props.description}</p>
       <div className="oneline-card-button">
-        <button className = "btn btn-default" id = "about-me-button" onClick={()=>{ navigate('/aboutTutor', {state: props});}}>About Me</button>
-        <button className = "btn btn-success" id = "call-me-button">Schedule Meet</button>
+        <button className = "btn btn-warning" id = "about-me-button" onClick={()=>{ navigate('/aboutTutor', {state: props});}}>About Me</button>
+        <button className = "btn btn-success" id = "call-me-button" onClick={()=>{ navigate('/schedule', {state: props});}}>Schedule Meet</button>
       </div>
     </div>
   </div>
