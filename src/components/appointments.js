@@ -35,7 +35,7 @@ function Appointments(props){
 
     const dat = apptsData
     .filter((val)=> {
-      if(val.tutor_id === Info || val.student_name === Info){
+      if(val.tutor_id === Info || val.student_id === Info){
         return val;
       }
     })
