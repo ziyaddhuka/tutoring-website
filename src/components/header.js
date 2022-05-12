@@ -36,7 +36,7 @@ class Header extends Component {
                         Profile
                         </a>
                         <div className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <a className="dropdown-item" href="#">Account Settings</a>
+                        <a className="dropdown-item" href="/accountSettings">Account Settings</a>
                         <a className="dropdown-item" href="#">Active Plans</a>
                         <a className="dropdown-item" href="/appointments">Appointments</a>
                         <a className="dropdown-item" href="#">Favorites</a>

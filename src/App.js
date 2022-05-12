@@ -13,6 +13,7 @@ import ErrorPage from './components/ErrorPage';
 import AboutTutor from './components/AboutTutor';
 import Schedule from './components/schedule';
 import TutorRegistration from './components/tutorRegistration';
+import AccountSettings from './components/accountSettings';
 import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Route path="/tutorRegistration" element={<TutorRegistration />}/>
           <Route path="/appointments" element={<Appointments />}/>
           <Route path="/schedule" element={<Schedule />}/>
+          <Route path="/accountSettings" element={<AccountSettings />}/>
 
           <Route path="*" element={<ErrorPage />}/>
         </Routes>
