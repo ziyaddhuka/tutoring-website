@@ -128,6 +128,9 @@ function Schedule(props) {
                         <input type="time" id="time-schedule" name="time-schedule" value={appt_time} onChange={e => setAppt_time(e.target.value)} class="form-control" />
                     </div>
                 </div>
+                <a href='/'>
+                    <button className = "btn btn-secondary mx-3 my-1" id="cancel-appt-button">Back</button>
+                </a>
                 <button className = "btn btn-primary mx-4 my-4" onClick={handleSubmit} >Schedule</button>
             </div>
         </div>
