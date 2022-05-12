@@ -6,8 +6,6 @@ function Appointments(props){
 
     const Info = props.authedUser;
 
-    console.log('Appointments');
-    
   function cancelAppointment(ex){    
     fetch(`http://localhost:3000/api/appts/${ex}`, { method: 'DELETE'})
     .then((response) => {
@@ -41,6 +39,7 @@ function Appointments(props){
         return val;
       }
     })
+    
     .map((each_data)=>{
         return <div>
             <h4 class="mx-3 my-1">{each_data.date}</h4>
