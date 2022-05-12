@@ -12,6 +12,7 @@ import Appointments from './components/appointments';
 import ErrorPage from './components/ErrorPage';
 import AboutTutor from './components/AboutTutor';
 import Schedule from './components/schedule';
+import TutorRegistration from './components/tutorRegistration';
 import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route path="/aboutTutor" element={<AboutTutor />}/>
           <Route path="/writeReview" element={<Review />}/>
           <Route path="/login" element={<Login />}/>
+          <Route path="/tutorRegistration" element={<TutorRegistration />}/>
           <Route path="/appointments" element={<Appointments />}/>
           <Route path="/schedule" element={<Schedule />}/>
 
