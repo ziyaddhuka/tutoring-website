@@ -27,12 +27,20 @@ function AboutTutor(props){
               setError(error);
             })
         }, []);
-        console.log(ratingsData);
+        //console.log(ratingsData);
         const dat = ratingsData.filter((val)=>{
             if(val.tutor_id == state.tutor_id){
                 return val;
             }
         });
+        let avgRating = 0;
+        for(let i = 0; i < dat.length; i++){
+            avgRating += parseInt(dat[i].rating);
+        }
+        if(dat.length != 0){
+            avgRating /= dat.length;
+        }
+        //console.log(avgRating);
     
         return(
             <div id="tutor-info">
@@ -48,6 +56,10 @@ function AboutTutor(props){
                         <h2 className="text-center">About Me</h2>
                         <p className="text-secondary">{state.description}</p>
                         <h2 className="text-center">Reviews</h2>
+                        {!avgRating ?
+                            <p className="text-center">No Ratings</p> :
+                            <p className="text-center">Average Rating: {avgRating}</p>
+                        }
                         {dat.map((eachRating)=>
                         <div>
                             <h5>Review by {eachRating.student_name}</h5>
