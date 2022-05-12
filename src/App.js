@@ -17,6 +17,7 @@ import AccountSettings from './components/accountSettings';
 import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
+  const operator_id='62763502e14033d425894b68';
   return (
     <div>
       <Header/>
@@ -27,9 +28,9 @@ function App() {
           <Route path="/writeReview" element={<Review />}/>
           <Route path="/login" element={<Login />}/>
           <Route path="/tutorRegistration" element={<TutorRegistration />}/>
-          <Route path="/appointments" element={<Appointments />}/>
+          <Route path="/appointments" element={<Appointments authedUser={operator_id}/>}/>
           <Route path="/schedule" element={<Schedule />}/>
-          <Route path="/accountSettings" element={<AccountSettings />}/>
+          <Route path="/accountSettings" element={<AccountSettings  authedUser={operator_id} />}/>
 
           <Route path="*" element={<ErrorPage />}/>
         </Routes>
