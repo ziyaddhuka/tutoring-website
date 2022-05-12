@@ -1,8 +1,10 @@
 import React, {useState, useEffect} from 'react';
 
-function Appointments(){
+function Appointments(props){
     const [apptsData, setApptsData] = useState([]);
     const [error, setError] = useState(null);
+
+    const Info = props.authedUser;
 
   function cancelAppointment(ex){    
     fetch(`http://localhost:3000/api/appts/${ex}`, { method: 'DELETE'})
@@ -30,9 +32,14 @@ function Appointments(){
           setError(error);
         })
     }, []);
-    // console.log(apptsData);
 
     const dat = apptsData
+    .filter((val)=> {
+      if(val.tutor_id === Info || val.student_name === Info){
+        return val;
+      }
+    })
+
     .map((each_data)=>{
         return <div>
             <h4 class="mx-3 my-1">{each_data.date}</h4>
