@@ -1,13 +1,38 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
-import { useLocation, useNavigate } from 'react-router-dom';
+import {useLocation, useNavigate} from 'react-router-dom';
 
 
 function AboutTutor(props){
         const { state } = useLocation();
         let navigate = useNavigate();
-        console.log(state);
+        const [ratingsData, setRatingsData] = useState([]);
+        const [error, setError] = useState(null);
+        //console.log(state);
+
+        useEffect( () => {
+            fetch('http://localhost:3000/ratings' , {
+              headers: {
+                'Content-type' : 'application/json',
+                'Accept' : 'application/json'
+              }
+            })
+            .then(res => res.json())
+            .then((data) => {
+              setRatingsData(data);
+            })
+            .catch((error) => {
+              console.log(error.message);
+              setError(error);
+            })
+        }, []);
+        console.log(ratingsData);
+        const dat = ratingsData.filter((val)=>{
+            if(val.tutor_id == state.tutor_id){
+                return val;
+            }
+        });
     
         return(
             <div id="tutor-info">
@@ -23,14 +48,14 @@ function AboutTutor(props){
                         <h2 className="text-center">About Me</h2>
                         <p className="text-secondary">{state.description}</p>
                         <h2 className="text-center">Reviews</h2>
-                        <h5>Great Tutor!<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></h5>
-                        <p>Such a great tutor! So nice and explains things well!</p>
-                        <hr></hr>
-                        <h5>Review 2<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></h5>
-                        <p>Review 2</p>
-                        <hr></hr>
-                        <h5>Review 3<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></h5>
-                        <p>Review 3</p>
+                        {dat.map((eachRating)=>
+                        <div>
+                            <h5>Review by {eachRating.student_name}</h5>
+                            <h6>{eachRating.rating} Stars</h6>
+                            <p>{eachRating.feedback}</p>
+                            <hr/>
+                        </div>
+                        )}
                     </div>
                     <div className="col-sm-4">
                         <h2 className ="text-center">Languages Spoken</h2>
