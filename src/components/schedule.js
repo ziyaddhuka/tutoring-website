@@ -42,7 +42,7 @@ function Schedule(props) {
         e.preventDefault();
         const dat = apptsData
         .filter((val)=> {
-        if(val._id === Info){
+        if(val._id === state.tutor_id){
             const obj = val.workingHours
             var size = Object.keys(obj).length;
             // var availableAny = new Boolean(false);
@@ -74,7 +74,7 @@ function Schedule(props) {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ tutor_name: state.name, student_name: studentname, 
-                tutor_id: state.tutor_id,
+                tutor_id: state.tutor_id, student_id: Info,
                 course_name: coursename, date: appt_date, time: appt_time })
         };
         fetch('http://localhost:3000/api/appts', requestOptions)
