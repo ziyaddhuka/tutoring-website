@@ -1,24 +1,15 @@
 import React, {useState} from 'react';
-import validator from 'validator'
+import validator from 'validator';
+function StudentRegistration() {
 
-function TutorRegistration() {
     const [email, setEmail] = useState('');
-
     const [password, setPassword] = useState('');
     const [firstname, setFirstname] = useState('');
     const [lastname, setLastname] = useState('');
-    const [languages, setLanguages] = useState('');
-    const [coursestaught, setCoursestaught] = useState('');
-    const [availability, setAvailability] = useState('');
-    const [aboutme, setAboutme] = useState('');
     const [emailError, setEmailError] = useState('')
     const [passwordError, setPasswordError] = useState('Password should contain atleast 6 characters, one uppercase letter, one number and one special character (!,@,#,$,%,^,&,*,+)')
-    // function handleSubmit(e){
 
-    //     const languagesArray = languages.split(",");
-    //     const coursesTaughtArray = coursestaught.split(",");
 
-    // const validPassword = new RegExp('^(?=.*?[A-Za-z])(?=.*?[0-9]).{6,}$');
 
     const validateEmail = (e) => {
         if (validator.isEmail(email)) {
@@ -53,9 +44,10 @@ function TutorRegistration() {
 
       }
 
-    async function registerTutor(e) {
+
+    async function registerStudent(e) {
         e.preventDefault()
-        const response = await fetch('http://localhost:3000/registertutor', {
+        const response = await fetch('http://localhost:3000/registerstudent', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -65,7 +57,6 @@ function TutorRegistration() {
                 password,
                 firstname,
                 lastname,
-                aboutme,
             }),
         })
         const data = await response.json()
@@ -77,15 +68,14 @@ function TutorRegistration() {
 			alert('Registration failed')
 		} 
     }
-
     return (
     <div>
       <div class="text-center">
-          <div className = "btn btn-warning btn-lg mx-4 my-4">Tutor Login</div>
+          <div className = "btn btn-warning btn-lg mx-4 my-4">Student Login</div>
           <h3>Registration</h3>
           <div class="row d-flex justify-content-center my-4">
               <div class="form-group col-md-4">
-                  <input type="text" id="username" name="username" value = {email} onChange={e => setEmail(e.target.value)} onBlur={e => validateEmail(e.target.value)} placeholder="Email" class="form-control" />
+                  <input type="text" id="Email" name="username" value = {email} onChange={e => setEmail(e.target.value)} placeholder="User name" onBlur={e => validateEmail(e.target.value)} class="form-control" />
                   <span style={{fontWeight: 'bold',}}>{emailError}</span>
               </div>
           </div>
@@ -105,30 +95,11 @@ function TutorRegistration() {
                   <input type="text" id="Last name" name="Last name" value = {lastname} onChange={e => setLastname(e.target.value)} placeholder="Last name" class="form-control" />
               </div>
           </div>
-          {/* <div class="row d-flex justify-content-center my-4">
-              <div class="form-group col-md-4">
-                  <input type="text" id="Languages" name="Languages" value = {languages} onChange={e => setLanguages(e.target.value)} placeholder="Languages" class="form-control" />
-              </div>
-          </div> */}
-          {/* <div class="row d-flex justify-content-center my-4">
-              <div class="form-group col-md-4">
-                  <input type="text" id="Courses Taught" name="Courses Taught" value = {coursestaught} onChange={e => setCoursestaught(e.target.value)} placeholder="Courses Taught" class="form-control" />
-              </div>
-          </div> */}
-          {/* <div class="row d-flex justify-content-center my-4">
-              <div class="form-group col-md-4">
-                  <input type="date" id="Availability" name="Availability" value = {availability} onChange={e => setAvailability(e.target.value)} placeholder="Availability" class="form-control" />
-              </div>
-          </div> */}
-          <div class="row d-flex justify-content-center my-4">
-              <div class="form-group col-md-4">
-                  <input type="text" id="About me" name="About me" value = {aboutme} onChange={e => setAboutme(e.target.value)} placeholder="About me" class="form-control" />
-              </div>
-          </div>
-          <button className = "btn btn-primary mx-4 my-4" onClick={registerTutor}>Sign up</button>
+
+          <button className = "btn btn-primary mx-4 my-4" onClick={registerStudent}>Sign up</button>
       </div>
     </div>
     );
   }
   
-  export default TutorRegistration;
+  export default StudentRegistration;

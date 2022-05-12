@@ -35,7 +35,7 @@ function Appointments(props){
 
     const dat = apptsData
     .filter((val)=> {
-      if(val.tutor_id === Info || val.student_name === Info){
+      if(val.tutor_id === Info || val.student_id === Info){
         return val;
       }
     })
@@ -47,18 +47,17 @@ function Appointments(props){
             <p class="mx-3 my-1"><b>Course:</b> {each_data.course_name}</p>
             <p class="mx-3 my-1"><b>Tutor:</b> {each_data.tutor_name}</p>
             <p class="mx-3 my-1"><b>Student:</b> {each_data.student_name}</p>
-            <a href='/'>
-              <button className = "btn btn-success mx-3 my-1" id="update-appt-button">Cancel</button>
-            </a>
-            <button className = "btn btn-warning mx-3 my-1" id="cancel-appt-button" onClick={() => cancelAppointment(each_data._id)}>Delete</button>
+            <button className = "btn btn-warning mx-3 my-1" id="cancel-appt-button" onClick={() => cancelAppointment(each_data._id)}>Cancel</button>
             <hr/>
         </div>
     });
+
 
     return(
         <div>
             <h1 class="mx-3 my-4">Appointments</h1>
             {dat}
+            <p class="mx-3 my-4">Total Hours: {dat.length}</p>
         </div>
     );
 }

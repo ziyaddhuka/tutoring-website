@@ -13,6 +13,7 @@ import ErrorPage from './components/ErrorPage';
 import AboutTutor from './components/AboutTutor';
 import Schedule from './components/schedule';
 import TutorRegistration from './components/tutorRegistration';
+import StudentRegistration from './components/studentRegistration';
 import AccountSettings from './components/accountSettings';
 import Favorites from './components/favorites';
 import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -29,6 +30,7 @@ function App() {
           <Route path="/writeReview" element={<Review />}/>
           <Route path="/login" element={<Login />}/>
           <Route path="/tutorRegistration" element={<TutorRegistration />}/>
+          <Route path="/studentRegistration" element={<StudentRegistration />}/>
           <Route path="/appointments" element={<Appointments authedUser={operator_id}/>}/>
           <Route path="/schedule" element={<Schedule authedUser={operator_id}/>}/>
           <Route path="/favorites" element={<Favorites authedUser={operator_id}/>}/>
