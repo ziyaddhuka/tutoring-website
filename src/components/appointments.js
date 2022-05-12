@@ -6,6 +6,8 @@ function Appointments(props){
 
     const Info = props.authedUser;
 
+    console.log('Appointments');
+    
   function cancelAppointment(ex){    
     fetch(`http://localhost:3000/api/appts/${ex}`, { method: 'DELETE'})
     .then((response) => {
@@ -39,7 +41,6 @@ function Appointments(props){
         return val;
       }
     })
-
     .map((each_data)=>{
         return <div>
             <h4 class="mx-3 my-1">{each_data.date}</h4>
@@ -47,6 +48,9 @@ function Appointments(props){
             <p class="mx-3 my-1"><b>Course:</b> {each_data.course_name}</p>
             <p class="mx-3 my-1"><b>Tutor:</b> {each_data.tutor_name}</p>
             <p class="mx-3 my-1"><b>Student:</b> {each_data.student_name}</p>
+            <a href='/'>
+            <button className = "btn btn-secondary mx-3 my-1" id="cancel-appt-button">Back</button>
+            </a>
             <button className = "btn btn-warning mx-3 my-1" id="cancel-appt-button" onClick={() => cancelAppointment(each_data._id)}>Cancel</button>
             <hr/>
         </div>
