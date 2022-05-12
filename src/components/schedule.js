@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { useLocation } from 'react-router-dom';
-import Popup from 'reactjs-popup';
+// import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import { useNavigate } from "react-router-dom";
 
