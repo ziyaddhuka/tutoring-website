@@ -1,12 +1,15 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { useLocation } from 'react-router-dom';
 // import Popup from 'reactjs-popup';
 //import 'reactjs-popup/dist/index.css';
 import { useNavigate } from "react-router-dom";
 
-
-
 function Schedule(props) {
+
+    const Info = props.authedUser;
+    const [apptsData, setApptsData] = useState([]);
+    const [error, setError] = useState(null);
+
     const navigate = useNavigate();
     const { state } = useLocation();
     const [tutorname, setTutorname] = useState('');
@@ -15,8 +18,58 @@ function Schedule(props) {
     const [appt_date, setAppt_date] = useState('');
     const [appt_time, setAppt_time] = useState('');
 
+    useEffect( () => {
+        fetch('http://localhost:3000/tutors', {
+          headers: {
+            'Content-type' : 'application/json',
+            'Accept' : 'application/json'
+          }
+        })
+        .then(res => res.json())
+        .then((data) => {
+          setApptsData(data);
+          
+        })
+        .catch((error) => {
+          console.log(error.message);
+          setError(error);
+        })
+
+    }, []);
+
+
     function handleSubmit(e){
         e.preventDefault();
+        const dat = apptsData
+        .filter((val)=> {
+        if(val._id === Info){
+            const obj = val.workingHours
+            var size = Object.keys(obj).length;
+            // var availableAny = new Boolean(false);
+            for (let i = 0; i < size; i++) {
+                var days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday','Sunday'];               
+                var today = new Date(appt_date);
+                var day = days[today.getDay()];
+
+                if(obj[i].Date == day){
+                    // availableAny = true;
+                    // alert('Date matches')
+                    // console.log('appt --> ', appt_time);
+                    // console.log('start time__> ',obj[i].StartTime);
+                    // console.log('end time__ ',obj[i].EndTime);
+                    if(obj[i].StartTime > appt_time || obj[i].EndTime < appt_time ){
+                        alert('Appt exists - choose a different time');
+                    }else{
+                        bookAppointment();
+                    }
+                }
+            }
+        }
+        })
+}
+
+
+    function bookAppointment(){
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -35,13 +88,9 @@ function Schedule(props) {
                 alert('Appointment Success');
                 
                 navigate("/");
-                // <Popup trigger={<button> Trigger</button>} position="right center">
-                //     <div>Popup content here !!</div>
-                // </Popup>
             };
           })
     }
-
     return (
         <div>
             <div class="text-center">
