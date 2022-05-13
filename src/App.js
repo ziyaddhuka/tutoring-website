@@ -7,6 +7,7 @@ import JumbotronBanner from './components/JumbotronBanner';
 import TutorsFilter from './components/TutorsFilter';
 // import SearchAndFilter from './components/SearchAndFilters';
 import Home from './components/Home';
+import HomeTutor from './components/HomeTutor';
 import Login from './components/login';
 import Review from './components/review';
 import Appointments from './components/appointments';
@@ -18,8 +19,10 @@ import StudentRegistration from './components/studentRegistration';
 import AccountSettings from './components/accountSettings';
 
 import StudentPrivateRoute from './components/studentProtectedRoutes'
+import TutorPrivateRoute from './components/tutorProtectedRoutes'
 import jwtDecode from 'jwt-decode';
 import jsonwebtoken from 'jsonwebtoken';
+
 // import store from './components/store';
 // import Favorites from './components/favorites';
 
@@ -27,6 +30,7 @@ import {BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-do
 
 function App() {
   let operator_id;
+  let user_type;
   let token = localStorage.getItem('token')
   if(token){
     try{
@@ -38,16 +42,17 @@ function App() {
       localStorage.removeItem("user");
       localStorage.removeItem("token");
     }
-    operator_id = jwtDecode(token).user_id        
+    operator_id = jwtDecode(token).user_id
+    user_type = jwtDecode(token).user_type
   }
-  console.log(operator_id)
+  console.log(operator_id, user_type)
 
   return (
     <div>
       <Header/>
       <Router>
         <Routes>
-          <Route path="/" exact  element={<StudentPrivateRoute> {<Home/>} </StudentPrivateRoute>}>
+          <Route path="/" exact  element={user_type=="tutor" ? <TutorPrivateRoute> {<HomeTutor authedUser={operator_id}/>} </TutorPrivateRoute> : <StudentPrivateRoute> {<Home/>} </StudentPrivateRoute>}>
           </Route>
           <Route path="/aboutTutor" element={<AboutTutor />}/>
           <Route path="/writeReview" element={<Review />}/>
