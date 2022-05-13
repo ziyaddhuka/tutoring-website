@@ -42,7 +42,7 @@ function Header() {
                     <a className="dropdown-item" href="/accountSettings">Account Settings</a>
                     <a className="dropdown-item" href="#">Active Plans</a>
                     <a className="dropdown-item" href="/appointments">Appointments</a>
-                    <a className="dropdown-item" href="#">Favorites</a>
+                    <a className="dropdown-item" href="/favorites">Favorites</a>
                     <div className="dropdown-divider"></div>
                     <a className="dropdown-item"  onClick={logoutUser} href="/login">Logout</a>
                     </div>
