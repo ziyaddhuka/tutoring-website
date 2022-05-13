@@ -22,9 +22,9 @@ import StudentPrivateRoute from './components/studentProtectedRoutes'
 import TutorPrivateRoute from './components/tutorProtectedRoutes'
 import jwtDecode from 'jwt-decode';
 import jsonwebtoken from 'jsonwebtoken';
-//import { Provider } from 'react-redux'
+
 // import store from './components/store';
-import Favorites from './components/favorites';
+// import Favorites from './components/favorites';
 
 import {BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
@@ -61,7 +61,7 @@ function App() {
           <Route path="/studentRegistration" element={<StudentRegistration />}/>
           <Route path="/appointments" element={<Appointments authedUser={operator_id}/>}/>
           <Route path="/schedule" element={<Schedule authedUser={operator_id}/>}/>
-          <Route path="/favorites" element={<Favorites authedUser={operator_id}/>}/>
+          {/* <Route path="/favorites" element={<Favorites authedUser={operator_id}/>}/> */}
           <Route path="/accountSettings" element={<AccountSettings  authedUser={operator_id} />}/>
 
           <Route path="*" element={<ErrorPage />}/>
