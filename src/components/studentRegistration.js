@@ -16,7 +16,9 @@ function StudentRegistration() {
           setEmailError('')
         } else {
           setEmailError('Enter valid Email!')
+        return false
         }
+        return true
       }
 
     
@@ -40,33 +42,36 @@ function StudentRegistration() {
         }
         else{
             setPasswordError('')
+            return true
         }
-
+        return false
       }
 
 
     async function registerStudent(e) {
         e.preventDefault()
-        const response = await fetch('http://localhost:3000/registerstudent', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                email,
-                password,
-                firstname,
-                lastname,
-            }),
-        })
-        const data = await response.json()
-        if (data.status === 'ok') {
-			alert('Registration successful')
-            window.location.href = '/login'
-		}
-		else {
-			alert('Registration failed')
-		} 
+        if(validatePassowrd(e) && validateEmail(e)){
+            const response = await fetch('http://localhost:3000/registerstudent', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email,
+                    password,
+                    firstname,
+                    lastname,
+                }),
+            })
+            const data = await response.json()
+            if (data.status === 'ok') {
+                alert('Registration successful')
+                window.location.href = '/login'
+            }
+            else {
+                alert('Registration failed')
+            } 
+        }
     }
     return (
     <div>

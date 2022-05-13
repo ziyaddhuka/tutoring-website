@@ -29,8 +29,8 @@ function AccountSettings(props) {
 
   const Info = userData;
 
-  const [username, setUsername] = useState(Info.username);
-  useEffect(() => { setUsername(Info.username)}, [Info.username]);
+  const [email, setEmail] = useState(Info.email);
+  useEffect(() => { setEmail(Info.email)}, [Info.email]);
   const [password, setPassword] = useState('');
   useEffect(() => { setPassword(Info.password)}, [Info.password]);
   const [firstname, setFirstname] = useState('');
@@ -58,7 +58,7 @@ function AccountSettings(props) {
       const requestOptions = {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ username:username, password:password, aboutMe: aboutme, firstname: firstname, 
+          body: JSON.stringify({ email:email, password:password, aboutMe: aboutme, firstname: firstname, 
               lastname: lastname, languagesSpoken: languagesArray, averageRating:0, hoursCompleted:0, coursesTaught: coursesTaughtArray
                })
       };
@@ -66,7 +66,8 @@ function AccountSettings(props) {
       .then((response) => {
           if(!response.ok) throw new Error(response.status);
           else {
-              navigate('/accountSettings');
+            alert('Successfully updated')
+            window.location.href = '/'
 
           };
         })
@@ -75,7 +76,7 @@ function AccountSettings(props) {
   return (
   <div>
     <div class="text-center">
-        <div className = "btn btn-warning btn-lg mx-4 my-4">{username}</div>
+        <div className = "btn btn-warning btn-lg mx-4 my-4">{email}</div>
         <h3>Account</h3>
         <div class="row d-flex justify-content-center my-4">
             <div class="form-group col-md-4">
