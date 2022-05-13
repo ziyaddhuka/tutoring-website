@@ -36,11 +36,11 @@ function Login() {
         }
         else{
             let api;
-            if (loginType == "student"){
-                api = 'http://localhost:3000/loginStudent'
+            if (loginType === "student"){
+                api = 'http://localhost:3000/loginstudent'
             }
             else {
-                api = 'http://localhost:3000/loginTutor'
+                api = 'http://localhost:3000/logintutor'
             }
             console.log(api)
             const response = await fetch(api, {
@@ -75,7 +75,7 @@ function Login() {
         <h3>Login</h3>
         <div class="row d-flex justify-content-center my-4">
             <div class="form-group col-md-4">
-                <input type="text" id="Email" name="username" value = {email} onChange={e => setEmail(e.target.value)} placeholder="User name" onBlur={e => validateEmail(e.target.value)} class="form-control" />
+                <input type="text" id="email" name="username" value = {email} onChange={e => setEmail(e.target.value)} placeholder="User name" onBlur={e => validateEmail(e.target.value)} class="form-control" />
                 <span style={{fontWeight: 'bold',}}>{emailError}</span>
             </div>
         </div>

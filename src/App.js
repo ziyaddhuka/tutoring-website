@@ -1,3 +1,4 @@
+import React, { useEffect, useState} from 'react';
 import './App.css';
 import Footer from './components/Footer';
 import Header from './components/header';
@@ -15,16 +16,37 @@ import Schedule from './components/schedule';
 import TutorRegistration from './components/tutorRegistration';
 import StudentRegistration from './components/studentRegistration';
 import AccountSettings from './components/accountSettings';
-import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import StudentPrivateRoute from './components/studentProtectedRoutes'
+import jwtDecode from 'jwt-decode';
+import jsonwebtoken from 'jsonwebtoken';
+import { Provider } from 'react-redux'
+// import store from './components/store';
+
+import {BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 function App() {
-  const operator_id='62763502e14033d425894b68';
+  let operator_id;
+  let token = localStorage.getItem('token')
+  if(token){
+    try{
+      var decoded = jsonwebtoken.verify(token, 'secret123')
+      console.log(decoded)
+    }
+    catch(err){
+      alert('Token is corrupted logging out...')
+      localStorage.removeItem("user");
+      localStorage.removeItem("token");
+    }
+    operator_id = jwtDecode(token).user_id        
+  }
+  console.log(operator_id)
   return (
     <div>
       <Header/>
       <Router>
         <Routes>
-          <Route path="/" element={<Home />}/>
+          <Route path="/" exact  element={<StudentPrivateRoute> {<Home/>} </StudentPrivateRoute>}>
+          </Route>
           <Route path="/aboutTutor" element={<AboutTutor />}/>
           <Route path="/writeReview" element={<Review />}/>
           <Route path="/login" element={<Login />}/>
